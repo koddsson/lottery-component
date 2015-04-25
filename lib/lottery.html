@@ -1,0 +1,74 @@
+<template id="lottery-template">
+  <style>
+    .lottery-wrapper, .title, .controls, .next, .prev {
+      display: inline-block;
+    }
+
+    .lottery-wrapper {
+      border: 1px solid lightgray;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 2px 2px 5px lightgray;
+      font-family: 'Roboto Condensed';
+    }
+
+    .controls {
+      float: right;
+      width: 25px;
+      margin: 8px;
+    }
+  
+    .title {
+      margin: 0;
+    }
+
+    .prev::before, .next::before {
+      display: inline-block;
+      content: '';
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      width: 0;
+      height: 0;
+    }
+
+    .prev::before {
+      border-right: 10px solid black;
+    }
+
+    .next::before {
+      border-left: 10px solid black;
+    }
+    .link {
+      color: lightgray;
+      text-decoration: none;
+      float: right;
+    }
+    .date {
+      float: left;
+      color: lightgray;
+    }
+    .numbers {
+      text-align: center;
+      font-size: 1.5em;
+      margin: 20px 0;
+    }
+    ::selection {
+      background: #ffb7b7;
+    }
+    @font-face {
+      font-family: 'Roboto Condensed';
+      src: url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+  <div class='lottery-wrapper'>
+    <h1 class='title'>Lottery numbers</h1>
+    <div class='error'></div>
+    <div class='numbers'></div>
+    <div class='date'></div>
+    <a class='link'>Source</a>
+  </div>
+</template>
+
+<script src='lottery.js'></script>
